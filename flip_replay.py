@@ -75,8 +75,8 @@ def flip_line(i, original):
 
     if 'endStats' in data.keys():
         data['endStats']['winner'] = 1 if data['endStats']['winner'] == 2 else 2
-    
-    return json.dumps(data) + '\n'
+
+    return json.dumps(data, separators=(',', ':')) + '\n'
 
 def flip_file(file, flipped_file):
     for i,line in enumerate(file):
